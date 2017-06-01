@@ -63,6 +63,7 @@
 	<div id="osmCredit">
 		<a href="https://www.openstreetmap.org/copyright" target="_blank">MapData: © OpenStreetMap contributors</a>
 	</div>
+	<div id="timeCounter"></div>
 	<script>
 		// ========== 初期化 ==========
 
@@ -245,10 +246,10 @@
 
 		var kmlDataArray = [];
 		//KMLデータを登録．kmzでもOK
-		kmlDataArray[0] = new kmlData("GFCI 1", 'data/kml/gfci1.kml');
-		//kmlDataArray[1] = new kmlData("GFCI 2", 'data/kml/gfci2.kml');
+		//kmlDataArray[0] = new kmlData("GFCI 1", 'data/kml/gfci1.kml');
+		kmlDataArray[0] = new kmlData("GFCI 2", 'data/kml/gfci2.kml');
 		//時間情報入りのKML
-		//kmlDataArray[2] = new kmlData("タイムスパン", 'data/kml/timeSpans.kml');
+		//kmlDataArray[0] = new kmlData("タイムスパン", 'data/kml/timeSpans.kml');
 
 		function loadKml() {
 			var i = 0;
@@ -278,6 +279,8 @@
 					clearInterval(load);
 					//クリック時にストビューを表示する処理
 					setClickEvent();
+
+
 					//ローディングGIFを非表示に
 					setTimeout('fadeInOut(blackOutDiv,0)', 1000);
 				}
